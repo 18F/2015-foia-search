@@ -19,7 +19,6 @@
 
     "express": "4.x",
     "ejs": "*",
-    "body-parser": "*",
     "method-override": "*",
     "errorhandler": "*"
   }

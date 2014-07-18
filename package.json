@@ -1,0 +1,26 @@
+{
+  "name": "search",
+  "version": "0.0.1",
+  "description": "FOIA Search API",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/18F/foia-search.git"
+  },
+  "author": "18F",
+  "license": "Public domain",
+  "bugs": {
+    "url": "https://github.com/18F/foia-search/issues"
+  },
+  "homepage": "https://github.com/18F/foia-search",
+
+  "dependencies": {
+    "elasticsearch": "2.x",
+
+    "express": "4.x",
+    "ejs": "*",
+    "body-parser": "*",
+    "method-override": "*",
+    "errorhandler": "*"
+  }
+}

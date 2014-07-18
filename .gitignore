@@ -1,0 +1,7 @@
+.DS_Store
+/todo.txt
+config.js
+/data
+*.log
+*.pyc
+/node_modules

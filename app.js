@@ -9,9 +9,7 @@ var port = parseInt(process.argv[2], 10);
 if (isNaN(port)) port = 3000;
 
 // app middleware/settings
-app.engine('.html', require('ejs').__express);
 app.enable('trust proxy')
-  .use(require('method-override')())
   .use(express.static(__dirname + '/public'));
 
 // development vs production

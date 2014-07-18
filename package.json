@@ -15,11 +15,7 @@
   "homepage": "https://github.com/18F/foia-search",
 
   "dependencies": {
-    "elasticsearch": "2.x",
-
     "express": "4.x",
-    "ejs": "*",
-    "method-override": "*",
     "errorhandler": "*"
   }
 }

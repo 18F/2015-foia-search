@@ -46,3 +46,4 @@ What I did to get this working on the dev server so far, based off of a proposed
 * Configure elasticsearch to point to other dirs (like its work dir to `/tmp`).
 * Update scrapelib to 0.10.1 in state scraper.
 * Get fabric working correctly.
+* Tie in the repo's version controlled ES config and nginx vhost into what they depend on.

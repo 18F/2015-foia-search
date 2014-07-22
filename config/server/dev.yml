@@ -1,0 +1,17 @@
+cluster.name: foia-dev
+
+index.number_of_shards: 1
+index.number_of_replicas: 0
+
+#path.conf: /path/to/conf
+#path.data: /path/to/data
+#path.work: /path/to/work
+#path.logs: /path/to/logs
+#path.plugins: /path/to/plugins
+
+bootstrap.mlockall: true
+
+http.port: 9200
+
+# 1.2 already disables this by default, but just for good measure
+script.disable_dynamic: true

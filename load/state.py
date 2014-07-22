@@ -44,7 +44,8 @@ def run(options):
     document = {
       "document_id": document_id,
       "url": metadata['url'],
-      "title": metadata['subject']
+      "title": metadata['subject'],
+      "source": "state"
     }
 
     # State docs don't always have a postedDate - research should be done

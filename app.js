@@ -1,5 +1,3 @@
-var routes = require("./routes");
-
 var express = require('express');
 var app = express();
 
@@ -19,8 +17,9 @@ else
   app.use(require('errorhandler')())
 
 
-// helpers and routes
+var routes = require("./routes");
 app.get('/', routes.index);
+app.get('/search', routes.search);
 
 
 // boot it up!

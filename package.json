@@ -16,6 +16,7 @@
 
   "dependencies": {
     "express": "4.x",
-    "errorhandler": "*"
+    "errorhandler": "*",
+    "elasticsearch": "2.x"
   }
 }

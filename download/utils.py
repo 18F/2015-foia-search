@@ -11,7 +11,7 @@ from bs4 import BeautifulSoup
 # scraper should be instantiated at class-load time, so that it can rate limit appropriately
 import scrapelib
 scraper = scrapelib.Scraper(requests_per_minute=30, follow_robots=False, retry_attempts=3)
-scraper.user_agent = "18f/foia (https://github.com/18f/foia/pull/11)"
+scraper.user_agent = "18f/foia-search (https://github.com/18f/foia-search)"
 
 
 # serialize and pretty print json

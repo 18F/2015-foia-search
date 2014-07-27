@@ -1,5 +1,18 @@
 #!/usr/bin/env python
 
+###
+#
+# Expects data from 18f/foia's state scraper at a data/state dir.
+#
+# options:
+#   limit: cut off after X documents
+#
+# localhost:9200 by default
+# uses index 'foia', to load 'documents' mapping run
+#   curl -XPUT "http://localhost:9200/foia/_mapping/documents" -d "@config/mappings/documents.json"
+#
+###
+
 # system dependencies
 import utils
 import glob
@@ -9,15 +22,9 @@ import json
 # third party dependencies
 from elasticsearch import Elasticsearch
 
-# localhost:9200 by default
-# uses index 'foia', to load 'documents' mapping run
-#   curl -XPUT "http://localhost:9200/foia/_mapping/documents" -d "@config/mappings/documents.json"
 es = Elasticsearch()
 index = 'foia'
 mapping = 'documents'
-
-# options:
-#   limit: cut off after X documents
 
 def run(options):
   limit = options.get("limit")

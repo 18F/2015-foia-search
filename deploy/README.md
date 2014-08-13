@@ -37,6 +37,21 @@ What I did to get this working on the dev server so far, based off of a proposed
 * Indexed those downloaded documents (~36).
 * Restarted node app server.
 
+**When setting up foia-core**
+
+* Updated to Python 3.4.1, installed virtualenvwrapper.
+* `apt-get install postgres` for using Postgres
+* created `foia` database and added username/pass `foia`/`foia`
+* `apt-get install libpq-dev postgres-server-dev-9.3` for building Python pg
+* Updated foia-search virtualenv to use `3.4.1`
+* Updated `.bashrc` with `PYTHONPATH` and `DJANGO_SETTINGS_MODULE`
+* Fixed virtualenvwrapper error by adding `VIRTUALENVWRAPPER_HOOK_DIR` to `.bashrc`
+* Cloned foia-core repo to `~foia/core/current` and put logs at `~foia/core/search`
+* Ran `syncdb`, created `foia` superuser with pass `foia`
+* Loaded scraped FOIA contact YAML into database with `load_agency_contacts.py`
+* Added new vhost at `/etc/nginx/vhosts/core.conf` that proxies to `localhost:8000`
+* Pointed `core` and `search` vhosts to server names of `http://foia-core` and `http://foia-search` respectively, updating `/etc/hosts` is needed to visit them
+
 **For the next server**
 
 * Use 0.1.4 instead.
@@ -47,3 +62,24 @@ What I did to get this working on the dev server so far, based off of a proposed
 * Update scrapelib to 0.10.1 in state scraper.
 * Get fabric working correctly.
 * Tie in the repo's version controlled ES config and nginx vhost into what they depend on.
+
+
+### server config
+
+`.bashrc` head:
+
+```bash
+# foia-core
+export DJANGO_SETTINGS_MODULE=foia_core.settings.dev
+export PYTHONPATH=/home/foia/core/current:PYTHONPATH
+
+# pyenv bin
+export PYENV_ROOT=/opt/install/pyenv
+export PATH=$PYENV_ROOT/bin:$PATH
+eval "$(pyenv init -)"
+pyenv virtualenvwrapper
+
+# home dir for virtualenvs for foia
+export WORKON_HOME=/opt/virtualenvs/foia
+export VIRTUALENVWRAPPER_HOOK_DIR=/opt/virtualenvs/foia
+```
